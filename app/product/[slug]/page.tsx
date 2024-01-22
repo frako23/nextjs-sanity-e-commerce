@@ -2,7 +2,7 @@ import { ImageGallery } from "@/app/component/ImageGallery";
 import { FullProduct } from "@/app/interface";
 import { client } from "@/app/lib/sanity";
 import { Button } from "@/components/ui/button";
-import { Star } from "lucide-react";
+import { Star, Truck } from "lucide-react";
 
 async function getData(slug: string) {
   const query = `
@@ -58,7 +58,24 @@ export default async function ProductPage({
                 >
                   ${data.price}
                 </span>
+                <span className="mb-0.5 text-red-500 line-through">
+                  ${data.price * 1.2}
+                </span>
               </div>
+              <span className="text-sm text-gray-500">
+                Incl. Vat plus Shipping
+              </span>
+              <div className="mb-6 flex items-center gap-2 text-gray-500">
+                <Truck className="w-6 h-6" />
+                <span className="tet-sm">2-4 Day Shipping</span>
+              </div>
+              <div className="flex gap-2 5">
+                <Button>Add To Bag</Button>
+                <Button variant={"secondary"}>Checkout now</Button>
+              </div>
+              <p className="mt-12 text-base text-gray-500 tracking-wide">
+                {data.description}
+              </p>
             </div>
           </div>
         </div>
