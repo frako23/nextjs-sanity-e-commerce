@@ -14,6 +14,10 @@ export const CheckoutNow = ({
   price_id,
 }: ProductCart) => {
   const { checkoutSingleItem } = useShoppingCart();
+
+  function buyNow(priceId: string) {
+    checkoutSingleItem(priceId);
+  }
   const product = {
     name: name,
     description: description,
@@ -26,7 +30,7 @@ export const CheckoutNow = ({
   return (
     <Button
       onClick={() => {
-        addItem(product);
+        buyNow(product.price_id);
       }}
     >
       Add To Cart
