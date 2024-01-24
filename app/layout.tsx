@@ -4,7 +4,7 @@ import "./globals.css";
 import { Navbar } from "./component/Navbar";
 import CartProvider from "./component/Providers";
 import { ShoppingCartModal } from "./component/ShoppingCartModal";
-import { Footer } from "./component/footer";
+import { Footer } from "./component/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
